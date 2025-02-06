@@ -1,25 +1,23 @@
-import Link from "next/link"
+import Link from "next/link";
+import Image from "next/image"; // Import the Image component from next/image
 
 const destinations = [
   {
     name: "Maasai Mara, Kenya",
-    image:
-      "/WhatsApp4.jpeg",
+    image: "/WhatsApp4.jpeg",
     description: "Experience the incredible wildlife of the Maasai Mara.",
   },
   {
     name: "Diani Beach",
-    image:
-      "/WhatsApp7.jpeg",
+    image: "/WhatsApp7.jpeg",
     description: "Relax on pristine beaches and crystal-clear waters.",
   },
   {
     name: "Serengeti, Tanzania",
-    image:
-      "/WhatsApp8.jpeg",
+    image: "/WhatsApp8.jpeg",
     description: "Witness the great wildebeest migration in the Serengeti.",
   },
-]
+];
 
 const TrendingDestinations = () => {
   return (
@@ -29,9 +27,11 @@ const TrendingDestinations = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {destinations.map((destination) => (
             <div key={destination.name} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={destination.image || "/placeholder.svg"}
                 alt={destination.name}
+                width={500} // Specify a width for the image
+                height={300} // Specify a height for the image
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
@@ -54,8 +54,7 @@ const TrendingDestinations = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TrendingDestinations
-
+export default TrendingDestinations;

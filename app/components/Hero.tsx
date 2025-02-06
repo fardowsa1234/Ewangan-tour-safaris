@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroText from "./HeroText";
 
 const Hero = () => {

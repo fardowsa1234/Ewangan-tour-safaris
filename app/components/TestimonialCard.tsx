@@ -1,13 +1,13 @@
-import type React from "react"
-import { Star } from "lucide-react"
-import OptimizedImage from "./OptimizedImage"
+import type React from "react";
+import { Star } from "lucide-react";
+import OptimizedImage from "./OptimizedImage";
 
 interface TestimonialCardProps {
-  name: string
-  location: string
-  rating: number
-  comment: string
-  image: string
+  name: string;
+  location: string;
+  rating: number;
+  comment: string;
+  image: string;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, location, rating, comment, image }) => {
@@ -32,11 +32,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, location, ratin
         </div>
       </div>
       <blockquote>
-        <p className="text-gray-600 italic">"{comment}"</p>
+        <p className="text-gray-600 italic">&quot;{comment}&quot;</p>
       </blockquote>
     </div>
-  )
-}
+  );
+};
 
-export default TestimonialCard
-
+export default TestimonialCard;

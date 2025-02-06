@@ -1,12 +1,11 @@
 import { MapPin, Phone, Mail } from "lucide-react"
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import React from 'react';
 
 export default function Contact() {
   return (
     <div className="container mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
-      <h2 className="text-2xl text-gray-600 mb-12">We're here to help you plan your next adventure.</h2>
+      <h2 className="text-2xl text-gray-600 mb-12">We&apos;re here to help you plan your next adventure.</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
@@ -108,6 +107,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
