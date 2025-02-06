@@ -85,7 +85,7 @@ const destinations: Record<DestinationType, Destination[]> = {
       image: "/Maldives.jpeg",
     },
     {
-      name: "Cape Town, South Africa",
+      name: "Cape Town",
       description: "Explore the stunning landscapes of Cape Town.",
       image: "/CapeTown.jpeg",
     },
