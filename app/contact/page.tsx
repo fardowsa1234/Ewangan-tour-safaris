@@ -1,8 +1,5 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from "lucide-react";
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-
 export default function Contact() {
   return (
     <div className="container mx-auto px-6 py-16 bg-white">

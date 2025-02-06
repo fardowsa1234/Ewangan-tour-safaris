@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Phone, MapPin } from "lucide-react";
 
 const TikTokIcon = () => (
   <svg
