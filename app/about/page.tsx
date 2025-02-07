@@ -10,7 +10,7 @@ export default function About() {
             About Ewang&apos;an Tours &amp; Safaris
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Creating Unforgettable Experiences Since 2019
+            Creating Unforgettable Experiences Since 2024
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-x-8">
@@ -18,7 +18,7 @@ export default function About() {
             <h2 className="text-3xl font-extrabold text-blue-600">Our Story</h2>
             <p className="mt-4 text-lg text-gray-500">
               Ewang&apos;an Tours &amp; Safaris was born out of a passion for travel and a deep love for the natural wonders of Africa.
-              Since our inception in 2019, we've been dedicated to crafting unforgettable experiences for travelers from
+              Since our inception in 2024, we've been dedicated to crafting unforgettable experiences for travelers from
               around the world. Our team of expert guides and travel planners work tirelessly to ensure that each
               journey is tailored to our clients&apos; unique interests and desires.
             </p>

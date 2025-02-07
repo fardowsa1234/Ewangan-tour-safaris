@@ -42,6 +42,36 @@ const PackageCard: React.FC<{
 const Packages = () => {
   const packages = [
     {
+      id: "dubai-awaits",
+      title: "Dubai Awaits! ✈️✨",
+      description: "Experience the ultimate Sky-High & High-Speed adventure in Dubai.",
+      features: [
+        "✅ 5-night stay at a 4-star hotel with breakfast",
+        "✅ Real Madrid Theme Park entry",
+        "✅ Desert Safari with BBQ dinner",
+        "✅ Ain Dubai experience",
+        "✅ Marina Dhow Cruise with dinner",
+        "✅ Half-day Dubai city tour & more!",
+      ],
+      price: "$469 per person (double sharing)",
+      image: "/Dubai.jpeg",
+    },
+    {
+      id: "mombasa-package",
+      title: "Mombasa Package (3 Nights, 4 Days)",
+      description: "Explore the stunning beaches of Mombasa with luxurious accommodations.",
+      features: [
+        "🌟 Voyager Beach Resort - From Ksh 62,700 (Flight), Ksh 45,400 (SGR)",
+        "🌟 Mombasa Continental Hotel - From Ksh 57,825 (Flight), Ksh 40,525 (SGR)",
+        "🌟 Severin Sea Lodge - From Ksh 67,800 (Flight), Ksh 50,500 (SGR)",
+        "📌 3 Nights accommodation with meals",
+        "📌 SGR and Airport transfers",
+        "📌 Return SGR & flight tickets",
+      ],
+      price: "From Ksh 40,525 per person",
+      image: "/Mombasa.jpeg",
+    },
+    {
       id: "wasini-island",
       title: "Wasini Island Tour",
       description:
@@ -69,24 +99,67 @@ const Packages = () => {
       price: "Only 21,000 KES per person",
       image: "/WhatsApp10.jpeg",
     },
-  ]
+    {
+      id: "dubai-students-tour",
+      title: "5 Days 4 Nights Dubai Students Tour",
+      description: "An exciting educational tour packed with thrilling experiences.",
+      features: [
+        "📍 Landmark Grand Hotel Deira – From USD 1336",
+        "📍 Best Western Premier M Four – From USD 1350",
+        "📍 Hampton by Hilton Dubai Airport – From USD 1353",
+        "📌 04N Accommodation with Breakfast",
+        "📌 Dubai City Tour, Desert Safari, Museum of Future, and more",
+      ],
+      price: "From USD 1336",
+      image: "/dubai-students.jpg",
+    },
+    {
+      id: "canton-fair",
+      title: "137th China Import & Export Fair",
+      description: "A business networking experience at the Canton Fair.",
+      features: [
+        "📌 8 Nights accommodation in a 4* hotel",
+        "📌 Daily breakfast & dinner",
+        "📌 Transportation & Guangzhou city tour",
+        "📌 Canton Tower, Pearl River Tour",
+        "📌 Visa & return air ticket",
+      ],
+      price: "USD 2,290 per person",
+      image: "/canton-fair.jpg",
+    },
+    {
+      id: "dar-es-salaam",
+      title: "5 Days 4 Nights Dar Es Salaam",
+      description: "Experience the beauty of Dar Es Salaam with luxury stays.",
+      features: [
+        "📍 Crowne Plaza Dar Es Salaam – From USD 944",
+        "📍 Golden Tulip Dar City Centre – From USD 964",
+        "📌 Return Airport Transfers on PVT basis",
+        "📌 04 Nights Accommodation with Breakfast",
+        "📌 Optional Full-Day Zanzibar Tour",
+      ],
+      price: "From USD 944",
+      image: "/dar-es-salaam.jpg",
+    },
+  ];
 
   return (
     <div className="bg-neutral min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center py-12  text-primary-dark transition-colors">Our Packages</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center py-12 text-primary-dark">
+          Our Packages
+        </h1>
         <p className="text-xl text-gray-600 text-center mb-12">
-          Discover our carefully curated packages for unforgettable experiences in Kenya
+          Discover our carefully curated packages for unforgettable experiences.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg) => (
             <PackageCard key={pkg.id} {...pkg} />
           ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Packages
-
+export default Packages;
