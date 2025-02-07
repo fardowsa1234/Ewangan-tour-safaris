@@ -21,7 +21,7 @@ const PackageCard: React.FC<{
       height={300}
       className="w-full h-48 object-cover rounded-lg mb-4"
     />
-    <h3 className="text-xl font-semibold text-primary">{title}</h3>
+    <h3 className="text-xl font-bold text-black">{title}</h3>
     <p className="mt-4 text-gray-600">{description}</p>
     <ul className="mt-4 space-y-2 text-gray-600">
       {features.map((feature, index) => (
@@ -29,7 +29,7 @@ const PackageCard: React.FC<{
       ))}
     </ul>
     <div className="mt-auto">
-      <p className="text-lg font-bold text-primary mt-4">{price}</p>
+      <p className="text-lg font-bold text-black mt-4">{price}</p>
       <Link href="/contact">
         <button className="mt-6 px-6 py-3 bg-primary-dark transition-colors text-white rounded-full hover:bg-blue-600 transition duration-300 w-full">
           Book Now
