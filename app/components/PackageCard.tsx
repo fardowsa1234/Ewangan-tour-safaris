@@ -52,3 +52,4 @@ const PackageCard: React.FC<PackageProps> = ({ id, title, description, features,
   </div>
 );
 
+export default PackageCard;

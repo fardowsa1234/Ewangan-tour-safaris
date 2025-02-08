@@ -17,11 +17,12 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-extrabold text-blue-600">Our Story</h2>
             <p className="mt-4 text-lg text-gray-500">
-              Ewang&apos;an Tours &amp; Safaris was born out of a passion for travel and a deep love for the natural wonders of Africa.
-              Since our inception in 2024, we've been dedicated to crafting unforgettable experiences for travelers from
-              around the world. Our team of expert guides and travel planners work tirelessly to ensure that each
-              journey is tailored to our clients&apos; unique interests and desires.
-            </p>
+  Ewang&apos;an Tours &amp; Safaris was born out of a passion for travel and a deep love for the natural wonders of Africa.
+  Since our inception in 2024, we&apos;ve been dedicated to crafting unforgettable experiences for travelers from
+  around the world. Our team of expert guides and travel planners work tirelessly to ensure that each
+  journey is tailored to our clients&apos; unique interests and desires.
+</p>
+
             <p className="mt-4 text-lg text-gray-500">
               We believe in responsible tourism and are committed to preserving the beautiful landscapes and diverse
               wildlife that make our destinations so special. Through partnerships with local communities and
