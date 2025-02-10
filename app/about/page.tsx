@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image"
 import Link from "next/link"
 import dynamic from 'next/dynamic'
-import { motion } from 'framer-motion'
 
 // Dynamically import the Motion components from Framer Motion
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
