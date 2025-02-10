@@ -32,7 +32,7 @@ export default function About() {
             transition={{ delay: 0.2, duration: 1 }}
             className="mt-4 max-w-2xl mx-auto text-xl text-gray-500"
           >
-            Creating Unforgettable Experiences Since 2019
+            Creating Unforgettable Experiences Since 2024
           </MotionP>
         </div>
         
