@@ -107,7 +107,7 @@ const Packages = () => {
         "✅ Marina Dhow Cruise with dinner",
         "✅ Half-day Dubai city tour & more!",
       ],
-      price: "$469 per person (double sharing)",
+      price: "$769 per person (double sharing)",
       image: "/Dubai.jpeg",
     },
     {
@@ -164,7 +164,7 @@ const Packages = () => {
         "📌 04N Accommodation with Breakfast",
         "📌 Dubai City Tour, Desert Safari, Museum of Future, and more",
       ],
-      price: "From USD 1336",
+      price: "From USD 1636",
       image: "/dubai-students.jpg",
     },
     {
@@ -178,7 +178,7 @@ const Packages = () => {
         "📌 Canton Tower, Pearl River Tour",
         "📌 Visa & return air ticket",
       ],
-      price: "USD 2,290 per person",
+      price: "USD 2,590 per person",
       image: "/canton-fair.jpg",
     },
     {
@@ -192,7 +192,7 @@ const Packages = () => {
         "📌 04 Nights Accommodation with Breakfast",
         "📌 Optional Full-Day Zanzibar Tour",
       ],
-      price: "From USD 944",
+      price: "From USD 1244",
       image: "/dar-es-salaam.jpg",
     },
   ];
