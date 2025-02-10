@@ -1,7 +1,15 @@
+'use client'; // Mark this file as a client component
+
 import { CreditCard, Plane, Camera, Hotel, Book, Users } from "lucide-react"
 import Link from "next/link"
 import OptimizedImage from "../components/OptimizedImage"
-import React from "react";
+import dynamic from 'next/dynamic'
+import { motion } from 'framer-motion'
+
+// Dynamically import the Motion components from Framer Motion
+const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
+const MotionH1 = dynamic(() => import('framer-motion').then((mod) => mod.motion.h1), { ssr: false });
+const MotionP = dynamic(() => import('framer-motion').then((mod) => mod.motion.p), { ssr: false });
 
 const services = [
   {
@@ -58,16 +66,37 @@ const OurServices = () => {
   return (
     <section id="our-services" className="py-16 px-4 sm:px-6 lg:px-8 bg-neutral">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-primary-dark transition-colors py-16 mb-4">Our Services</h1>
-        <p className="text-xl text-center text-gray-600 mb-12">
+        {/* Title and description with animation */}
+        <MotionH1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-4xl font-bold text-center text-primary-dark transition-colors py-16 mb-4"
+        >
+          Our Services
+        </MotionH1>
+        <MotionP
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1 }}
+          className="text-xl text-center text-gray-600 mb-12"
+        >
           Discover our range of travel services designed to make your journey unforgettable
-        </p>
+        </MotionP>
+
+        {/* Service Cards with animations */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
+          {services.map((service, index) => (
+            <motion.div
               key={service.id}
               id={service.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.4 + index * 0.2, // Staggered animation for each service card
+                duration: 1,
+              }}
             >
               <div className="relative h-64 overflow-hidden">
                 <OptimizedImage
@@ -78,16 +107,34 @@ const OurServices = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end justify-start p-6">
-                  <h3 className="text-2xl font-semibold text-white mb-2 transition-transform duration-300 group-hover:translate-y-[-10px]">
+                  <MotionH1
+                    className="text-2xl font-semibold text-white mb-2 transition-transform duration-300 group-hover:translate-y-[-10px]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.6 + index * 0.3,
+                      duration: 0.8,
+                    }}
+                  >
                     {service.title}
-                  </h3>
+                  </MotionH1>
                 </div>
                 <div className="absolute top-4 right-4 bg-primary rounded-full p-2 shadow-lg">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <MotionP
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.8 + index * 0.3,
+                    duration: 1,
+                  }}
+                  className="text-gray-600 mb-4"
+                >
+                  {service.description}
+                </MotionP>
                 <Link
                   href={`/services#${service.id}`}
                   className="inline-flex items-center text-green-400 hover:text-secondary-dark font-medium transition-colors"
@@ -107,7 +154,7 @@ const OurServices = () => {
                   </svg>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -116,4 +163,3 @@ const OurServices = () => {
 }
 
 export default OurServices
-

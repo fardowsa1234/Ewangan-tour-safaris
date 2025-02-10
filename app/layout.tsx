@@ -13,7 +13,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Ewang'an Tours & Safaris - Explore Africa's Beauty",
+  title: "Ewang'an Tours & Safaris - Explore Kenya's Beauty",
   description:
     "Discover unforgettable adventures across stunning Kenya safaris and serene beach destinations with Ewang'an Tours & Safaris.",
   openGraph: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Ewang'an Tours & Safaris",
     images: [
       {
-        url: "WhatsApp.png",
+        url: "WhatsApp1.png",
         width: 800,
         height: 600,
         alt: "Ewang'an Tours & Safaris Logo",

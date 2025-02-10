@@ -1,6 +1,9 @@
+'use client';
+
 import type React from "react";
 import { Star } from "lucide-react";
 import OptimizedImage from "./OptimizedImage";
+import { motion } from "framer-motion"; // Importing framer-motion for animations
 
 interface TestimonialCardProps {
   name: string;
@@ -12,7 +15,12 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, location, rating, comment, image }) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg">
+    <motion.div
+      className="bg-white rounded-xl p-6 shadow-lg"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="flex items-center space-x-4 mb-4">
         <div className="relative w-16 h-16 rounded-full overflow-hidden">
           <OptimizedImage src={image} alt={name} width={64} height={64} className="object-cover" />
@@ -32,9 +40,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, location, ratin
         </div>
       </div>
       <blockquote>
-        <p className="text-gray-600 italic">&quot;{comment}&quot;</p>
+        <p className="text-gray-600 italic">"{comment}"</p>
       </blockquote>
-    </div>
+    </motion.div>
   );
 };
 

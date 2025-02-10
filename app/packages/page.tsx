@@ -1,17 +1,24 @@
-import React from "react";
-import Link from "next/link"
-import OptimizedImage from "../components/OptimizedImage"
+'use client'; // Mark this file as a client component
 
+import type React from "react";
+import Link from "next/link";
+import OptimizedImage from "../components/OptimizedImage";
+import { motion } from "framer-motion";
+
+// PackageCard component with animations
 const PackageCard: React.FC<{
-  id: string
-  title: string
-  description: string
-  features: string[]
-  price: string
-  image: string
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  price: string;
+  image: string;
 }> = ({ id, title, description, features, price, image }) => (
-  <div
+  <motion.div
     id={id}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
     className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 flex flex-col"
   >
     <OptimizedImage
@@ -21,24 +28,71 @@ const PackageCard: React.FC<{
       height={300}
       className="w-full h-48 object-cover rounded-lg mb-4"
     />
-    <h3 className="text-xl font-bold text-black">{title}</h3>
-    <p className="mt-4 text-gray-600">{description}</p>
-    <ul className="mt-4 space-y-2 text-gray-600">
-      {features.map((feature, index) => (
-        <li key={index}>{feature}</li>
-      ))}
-    </ul>
-    <div className="mt-auto">
-      <p className="text-lg font-bold text-black mt-4">{price}</p>
-      <Link href="/contact">
-        <button className="mt-6 px-6 py-3 bg-primary-dark transition-colors text-white rounded-full hover:bg-blue-600 transition duration-300 w-full">
-          Book Now
-        </button>
-      </Link>
-    </div>
-  </div>
-)
+    
+    {/* Title with motion */}
+    <motion.h3
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.6 }}
+      className="text-xl font-semibold text-black mb-2"
+    >
+      {title}
+    </motion.h3>
 
+    {/* Description with motion */}
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+      className="text-gray-600 mb-4"
+    >
+      {description}
+    </motion.p>
+
+    {/* Features with motion */}
+    <motion.ul
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.6 }}
+      className="space-y-2 text-gray-600"
+    >
+      {features.map((feature, index) => (
+        <motion.li key={index}>{feature}</motion.li>
+      ))}
+    </motion.ul>
+
+    <div className="mt-auto">
+      {/* Price with motion */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="text-lg font-bold text-black mt-4"
+      >
+        {price}
+      </motion.p>
+
+      {/* Book Now Button with animation */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+        className="flex justify-center mt-4" // Center the button using flexbox
+      >
+        <Link
+          href="/contact"
+          className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-6 font-medium text-white shadow-lg bg-gradient-to-br from-blue-600 via-primary-dark to-blue-600 hover:scale-105 transition-all duration-300"
+        >
+          <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-600 via-primary-dark transition-colors to-blue-600"></span>
+          <span className="ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-blue-600 opacity-30 transition duration-500 group-hover:rotate-90"></span>
+          <span className="relative text-lg font-bold">Book Now</span>
+        </Link>
+      </motion.div>
+    </div>
+  </motion.div>
+);
+
+// Packages page component
 const Packages = () => {
   const packages = [
     {
@@ -146,13 +200,29 @@ const Packages = () => {
   return (
     <div className="bg-neutral min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center py-12 text-primary-dark">
+        {/* Page title with animation */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-4xl font-bold mb-8 text-center py-12 text-primary-dark transition-colors"
+        >
           Our Packages
-        </h1>
-        <p className="text-xl text-gray-600 text-center mb-12">
-          Discover our carefully curated packages for unforgettable experiences.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </motion.h1>
+
+        {/* Page description with animation */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-xl text-gray-600 text-center mb-12"
+        >
+          Discover our carefully curated packages for unforgettable experiences in Kenya
+        </motion.p>
+
+        {/* Grid layout for packages */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Rendering PackageCard components */}
           {packages.map((pkg) => (
             <PackageCard key={pkg.id} {...pkg} />
           ))}
